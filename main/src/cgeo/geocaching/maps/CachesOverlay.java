@@ -204,59 +204,59 @@ public class CachesOverlay extends AbstractItemizedOverlay {
     @Override
     public boolean onTap(final int index) {
 
+        if (items.size() <= index) {
+            return false;
+        }
+
         try {
-            if (items.size() <= index) {
-                return false;
-            }
-
             progress.show(context, context.getResources().getString(R.string.map_live), context.getResources().getString(R.string.cache_dialog_loading_details), true, null);
-
-            // prevent concurrent changes
-            getOverlayImpl().lock();
-            CachesOverlayItemImpl item = null;
-            try {
-                if (index < items.size()) {
-                    item = items.get(index);
-                }
-            } finally {
-                getOverlayImpl().unlock();
-            }
-
-            if (item == null) {
-                return false;
-            }
-
-            final IWaypoint coordinate = item.getCoord();
-            final CoordinatesType coordType = coordinate.getCoordType();
-
-            if (coordType == CoordinatesType.CACHE && StringUtils.isNotBlank(coordinate.getGeocode())) {
-                final Geocache cache = DataStore.loadCache(coordinate.getGeocode(), LoadFlags.LOAD_CACHE_OR_DB);
-                if (cache != null) {
-                    final RequestDetailsThread requestDetailsThread = new RequestDetailsThread(cache);
-                    if (!requestDetailsThread.requestRequired()) {
-                        // don't show popup if we have enough details
-                        progress.dismiss();
-                    }
-                    requestDetailsThread.start();
-                    return true;
-                }
-                progress.dismiss();
-                return false;
-            }
-
-            if (coordType == CoordinatesType.WAYPOINT && coordinate.getId() >= 0) {
-                CGeoMap.markCacheAsDirty(coordinate.getGeocode());
-                WaypointPopup.startActivity(context, coordinate.getId(), coordinate.getGeocode());
-            } else {
-                progress.dismiss();
-                return false;
-            }
-
-            progress.dismiss();
         } catch (final NotFoundException e) {
             Log.e("CachesOverlay.onTap", e);
             progress.dismiss();
         }
+
+        // prevent concurrent changes
+        getOverlayImpl().lock();
+        CachesOverlayItemImpl item = null;
+        try {
+            if (index < items.size()) {
+                item = items.get(index);
+            }
+        } finally {
+            getOverlayImpl().unlock();
+        }
+
+        if (item == null) {
+            return false;
+        }
+
+        final IWaypoint coordinate = item.getCoord();
+        final CoordinatesType coordType = coordinate.getCoordType();
+
+        if (coordType == CoordinatesType.CACHE && StringUtils.isNotBlank(coordinate.getGeocode())) {
+            final Geocache cache = DataStore.loadCache(coordinate.getGeocode(), LoadFlags.LOAD_CACHE_OR_DB);
+            if (cache != null) {
+                final RequestDetailsThread requestDetailsThread = new RequestDetailsThread(cache);
+                if (!requestDetailsThread.requestRequired()) {
+                    // don't show popup if we have enough details
+                    progress.dismiss();
+                }
+                requestDetailsThread.start();
+                return true;
+            }
+            progress.dismiss();
+            return false;
+        }
+
+        if (coordType == CoordinatesType.WAYPOINT && coordinate.getId() >= 0) {
+            CGeoMap.markCacheAsDirty(coordinate.getGeocode());
+            WaypointPopup.startActivity(context, coordinate.getId(), coordinate.getGeocode());
+        } else {
+            progress.dismiss();
+            return false;
+        }
+
+        progress.dismiss();
 
         return true;
     }
