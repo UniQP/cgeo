@@ -24,7 +24,7 @@ Your application must target at least *android sdk version 7*.
 First step is to clone [repository][linkRepo] or download it as an archive.
 
 When your are done you find two folders: *lib* and *sample-app-capitals*. First one is a library project that you should add to your project.
-You don't need any additional permissions in your AndroidManifest.xml to use API library, so you can write real code straight away, calling for different `MapsWithMeApi` methods (more details below). 
+You don't need any additional permissions in your AndroidManifest.xml to use API library, so you can write real code straight away, calling for different `MapsWithMeApi` methods (more details below).
 
 ##Classes Overview and HOW TO
 Core classes you will work with are:
@@ -133,7 +133,7 @@ Both *Lite* and *Pro* versions since 2.4.0 and above support API calls.
 Nothing serious. API library will show simple dialog with gentle offer to download MapsWithMe. You can see how it looks like below. ![Please install us](site/images/dlg.png)
 
 #### If user has both *Lite* and *Pro* versions which one will be called?
-MapsWithMe Pro will serve your request in the case if both *Lite* and *Pro* versions installed. 
+MapsWithMe Pro will serve your request in the case if both *Lite* and *Pro* versions installed.
 
 ## Sample Code and Application
 
