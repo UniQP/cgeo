@@ -289,24 +289,20 @@ public final class LocalStorage {
             return false;
         }
 
-
         try {
-            try {
-                final File tempFile = File.createTempFile("download", null, targetFile.getParentFile());
-                final FileOutputStream fos = new FileOutputStream(tempFile);
-                final boolean written = copy(inputStream, fos);
-                fos.close();
-                if (written) {
-                    return tempFile.renameTo(targetFile);
-                }
-                FileUtils.deleteIgnoringFailure(tempFile);
-                return false;
-            } finally {
-                IOUtils.closeQuietly(inputStream);
+            final File tempFile = File.createTempFile("download", null, targetFile.getParentFile());
+            final FileOutputStream fos = new FileOutputStream(tempFile);
+            final boolean written = copy(inputStream, fos);
+            fos.close();
+            if (written) {
+                return tempFile.renameTo(targetFile);
             }
+            FileUtils.deleteIgnoringFailure(tempFile);
         } catch (final IOException e) {
             Log.e("LocalStorage.saveToFile", e);
             FileUtils.deleteIgnoringFailure(targetFile);
+        } finally {
+            IOUtils.closeQuietly(inputStream);
         }
         return false;
     }
