@@ -669,10 +669,11 @@ public final class GCParser {
                     final String typeStr = matcherLog.group(1);
                     final String countStr = getNumberString(matcherLog.group(2));
 
-                    if (StringUtils.isNotBlank(typeStr)
-                            && LogType.getByIconName(typeStr) != LogType.UNKNOWN
-                            && StringUtils.isNotBlank(countStr)) {
-                        cache.getLogCounts().put(LogType.getByIconName(typeStr), Integer.valueOf(countStr));
+                    if (StringUtils.isNotBlank(typeStr) && StringUtils.isNotBlank(countStr)) {
+                        final LogType logType = LogType.getByIconName(typeStr);
+                        if (logType != LogType.UNKNOWN) {
+                            cache.getLogCounts().put(logType, Integer.valueOf(countStr));
+                        }
                     }
                 }
             }
