@@ -670,7 +670,7 @@ public final class GCParser {
                     final String countStr = getNumberString(matcherLog.group(2));
 
                     if (StringUtils.isNotBlank(typeStr) && StringUtils.isNotBlank(countStr)) {
-                        final LogType logType = LogType.getByIconName(typeStr);
+                        final LogType logType = LogType.getByType(typeStr);
                         if (logType != LogType.UNKNOWN) {
                             cache.getLogCounts().put(logType, Integer.valueOf(countStr));
                         }
@@ -1699,7 +1699,7 @@ public final class GCParser {
                 final LogEntry.Builder logDoneBuilder = new LogEntry.Builder()
                         .setAuthor(TextUtils.stripHtml(matcherLogs.group(3)).trim())
                         .setDate(date)
-                        .setLogType(LogType.getByIconName(matcherLogs.group(1)))
+                        .setLogType(LogType.getByType(matcherLogs.group(1)))
                         .setLog(matcherLogs.group(7).trim());
 
                 if (matcherLogs.group(4) != null && matcherLogs.group(6) != null) {
