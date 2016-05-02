@@ -20,7 +20,7 @@ public enum LogType {
 
     FOUND_IT(2, "Found it", "Found it", R.string.log_found, R.drawable.mark_green, R.drawable.marker_found_offline),
     DIDNT_FIND_IT(3, "Didn't find it", "Didn't find it", R.string.log_dnf, R.drawable.mark_red, R.drawable.marker_not_found_offline),
-    NOTE(4, "Write note", "Comment", R.string.log_note, R.drawable.mark_gray, R.drawable.marker_note),
+    NOTE(3, "Write note", "Comment", R.string.log_note, R.drawable.mark_gray, R.drawable.marker_note),
     PUBLISH_LISTING(1003, "Publish listing", "", R.string.log_published, R.drawable.mark_green_more),
     ENABLE_LISTING(23, "Enable Listing", "Ready to search", R.string.log_enabled, R.drawable.mark_green_more),
     ARCHIVE(5, "Archive", "Archived", R.string.log_archived, R.drawable.mark_red_more, R.drawable.marker_archive),
@@ -29,8 +29,8 @@ public enum LogType {
     NEEDS_ARCHIVE(7, "Needs Archived", "", R.string.log_needs_archived, R.drawable.mark_red, R.drawable.marker_archive),
     WILL_ATTEND(9, "Will Attend", "Will attend", R.string.log_attend),
     ATTENDED(10, "Attended", "Attended", R.string.log_attended, R.drawable.mark_green, R.drawable.marker_found_offline),
-    RETRIEVED_IT(13, "retrieved it", "", R.string.log_retrieved, R.drawable.mark_green_more),
-    PLACED_IT(14, "placed it", "", R.string.log_placed, R.drawable.mark_green_more),
+    RETRIEVED_IT(13, "retrieve it from a cache", "", R.string.log_retrieved, R.drawable.mark_green_more),
+    PLACED_IT(14, "dropped off", "", R.string.log_placed, R.drawable.mark_green_more),
     GRABBED_IT(19, "grabbed it", "", R.string.log_grabbed, R.drawable.mark_green_more),
     NEEDS_MAINTENANCE(45, "Needs Maintenance", "Needs maintenance", R.string.log_maintenance_needed, R.drawable.mark_red, R.drawable.marker_maintenance),
     OWNER_MAINTENANCE(46, "Owner Maintenance", "", R.string.log_maintained, R.drawable.mark_green_more, R.drawable.marker_owner_maintenance),
@@ -44,7 +44,7 @@ public enum LogType {
     MOVE_COLLECTION(69, "unused_collection", "", R.string.log_movecollection),
     MOVE_INVENTORY(70, "unused_inventory", "", R.string.log_moveinventory),
     RETRACT(25, "Retract Listing", "", R.string.log_retractlisting),
-    MARKED_MISSING(16, "marked missing", "", R.string.log_marked_missing, R.drawable.mark_red),
+    MARKED_MISSING(16, "mark missing", "", R.string.log_marked_missing, R.drawable.mark_red),
     OC_TEAM_COMMENT(83, "X1", "OC Team comment", R.string.log_oc_team_comment),
     UNKNOWN(0, "", "", R.string.err_unknown, R.drawable.mark_red); // LogType not initialized yet
 
