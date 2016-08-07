@@ -229,7 +229,7 @@
   <string name="warn_rendertheme_missing">Das gewählte Karten-Theme wurde nicht gefunden.</string>
   <string name="warn_pocket_query_select">Kein Pocket-Query ausgewählt.</string>
   <string name="warn_no_pocket_query_found">Kein Pocket-Query online gefunden.</string>
-  <string name="err_read_pocket_query_list">Fehler beim Lesen der Pocket Queries.</string>
+  <string name="err_read_pocket_query_list">Fehler beim Lesen der Pocket-Queries.</string>
   <string name="info_log_posted">Log erfolgreich gesendet.</string>
   <string name="info_log_saved">Log erfolgreich gespeichert.</string>
   <string name="info_log_post_failed">Das Senden des Logs ist fehlgeschlagen.</string>
