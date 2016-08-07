@@ -680,7 +680,7 @@
   <!-- auth Twitter -->
   <string name="auth_dialog_completed_twitter">c:geo ist nun autorisiert, Tweets bei Twitter zu erstellen.</string>
   <!-- auth opencaching -->
-  <string name="auth_ocde">opencaching.de</string>
+  <string name="auth_ocde">Opencaching.de</string>
   <string name="auth_ocpl">opencaching.pl</string>
   <string name="auth_ocnl">opencaching.nl</string>
   <string name="auth_ocus">opencaching.us</string>
