@@ -683,7 +683,7 @@
   <string name="auth_ocde">Opencaching.de</string>
   <string name="auth_ocpl">opencaching.pl</string>
   <string name="auth_ocnl">opencaching.nl</string>
-  <string name="auth_ocus">opencaching.us</string>
+  <string name="auth_ocus">Opencaching.us</string>
   <string name="auth_ocro">opencaching.ro</string>
   <string name="auth_ocuk">opencache.uk</string>
   <string name="auth_dialog_completed_oc">c:geo ist nun autorisiert, Caches zu laden und auf %s zu loggen.</string>
