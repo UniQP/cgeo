@@ -636,7 +636,7 @@
   <string name="feature_search_owner">Suche nach Besitzer</string>
   <string name="feature_search_finder">Suche nach Finder</string>
   <string name="init_experimental_title">Experimentelle Funktionen</string>
-  <string name="init_mfbeta">Mapsforge beta als Standard</string>
+  <string name="init_mfbeta">Mapsforge Beta als Standard</string>
   <string name="init_mfbeta_description">Der aktuelle Release enthält eine Betaversion unserer neuen Mapsforge-Karte als experimentelles Feature. Dies neue Karte kann hier als Standard für Live-Karte und Listen aktiviert werden.</string>
   <!-- map sources -->
   <string name="map_source_google_map">Google: Karte</string>
